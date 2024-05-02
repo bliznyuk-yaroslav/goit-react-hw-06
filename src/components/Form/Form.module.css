@@ -13,6 +13,7 @@
   height: 50px;
   margin: auto;
   align-self: center;
+  border: 1px solid silver;
 }
 .form {
   display: flex;
