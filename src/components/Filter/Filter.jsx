@@ -4,6 +4,7 @@ import { filterContacts } from "../../redux/filterSlice";
 
 export default function Filter() {
   const dispatch = useDispatch();
+  const filterVal = useSelector((state) => state.filter.value);
 
   const handleFilter = (e) => dispatch(filterContacts(e.target.value));
 
@@ -15,6 +16,7 @@ export default function Filter() {
         className={css.input}
         name="filter"
         placeholder="Enter name to filter"
+        value={filterVal}
         onChange={handleFilter}
       />
     </div>
