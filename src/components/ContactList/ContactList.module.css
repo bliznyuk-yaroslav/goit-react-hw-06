@@ -1,0 +1,14 @@
+.item {
+  list-style-type: none;
+  border: 1px solid var(--LIGHT-SLATE, #8e8f99);
+  font-size: 20px;
+  width: 500px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 30px;
+  padding: 0;
+}
