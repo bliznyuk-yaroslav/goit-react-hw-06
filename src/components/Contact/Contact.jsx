@@ -1,7 +1,7 @@
 import { FaPhoneAlt, FaRegSmile, FaQuestion } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import css from "./Contact.module.css";
-import { deleteContacts } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsSlice";
 
 export default function ContactList({ name, number, id }) {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export default function ContactList({ name, number, id }) {
       <button
         type="button"
         className={css.btn}
-        onClick={() => dispatch(deleteContacts(id))}
+        onClick={() => dispatch(deleteContact(id))}
       >
         Delete
       </button>

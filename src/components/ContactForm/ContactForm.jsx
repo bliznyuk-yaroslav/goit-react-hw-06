@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from "react-redux";
-import { addContacts } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsSlice";
 
 const UserSchema = Yup.object().shape({
   name: Yup.string()
@@ -17,20 +17,20 @@ const UserSchema = Yup.object().shape({
 });
 
 export default function ContactForm() {
-  const checkContactExists = (contacts, name) => {
-    return contacts.some((el) => el.name.toLowerCase() === name.toLowerCase());
+  const checkContactExists = (items, name) => {
+    return items.some((el) => el.name.toLowerCase() === name.toLowerCase());
   };
 
   const dispatch = useDispatch();
-  const { contacts } = useSelector((state) => state.contacts);
+  const { items } = useSelector((state) => state.contacts);
   const handleSubmit = (values, { resetForm }) => {
     const { name, number } = values;
-    if (checkContactExists(contacts, name)) {
+    if (checkContactExists(items, name)) {
       alert(`${name} is already a contact`);
       resetForm();
     } else {
       dispatch(
-        addContacts({
+        addContact({
           id: nanoid(),
           name,
           number,
