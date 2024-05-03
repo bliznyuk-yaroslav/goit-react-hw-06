@@ -1,15 +1,15 @@
 import "./App.css";
 import ContactList from "../ContactList/ContactList";
-import Filter from "../Filter/Filter";
-import Form from "../Form/Form";
+import SearchBox from "../SearchBox/SearchBox";
+import ContactForm from "../ContactForm/ContactForm";
 
 export default function App() {
   return (
     <div>
       <h2>PhoneBook</h2>
-      <Form />
+      <ContactForm />
       <h2>My Contacts</h2>
-      <Filter />
+      <SearchBox />
       <ContactList />
     </div>
   );
